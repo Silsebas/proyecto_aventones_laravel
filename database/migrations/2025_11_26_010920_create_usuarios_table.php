@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-// database/migrations/xxxx_xx_xx_xxxxxx_create_usuarios_table.php
+    // database/migrations/xxxx_xx_xx_xxxxxx_create_usuarios_table.php
     public function up()
     {
         Schema::create('usuarios', function (Blueprint $table) {
@@ -21,11 +21,12 @@ return new class extends Migration
             $table->string('correo', 100)->unique();
             $table->string('telefono', 20);
             $table->string('foto_perfil')->nullable();
-            $table->string('password_hash'); // En Laravel, se llamará 'password'
-            $table->enum('rol', ['admin', 'chofer', 'pasajero']);
+            $table->string('password');
+            // --- Se agraga el rol de superadmin ---
+            $table->enum('rol', ['superadmin', 'admin', 'chofer', 'pasajero']);
             $table->enum('estado', ['pendiente', 'activo', 'inactivo'])->default('pendiente');
             $table->string('token_activacion', 100)->nullable();
-            $table->timestamps(); // Crea `created_at` y `updated_at` (similar a tu `fecha_registro`)
+            $table->timestamps();
         });
     }
 
