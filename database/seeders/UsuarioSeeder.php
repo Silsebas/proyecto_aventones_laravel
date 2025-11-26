@@ -25,7 +25,7 @@ class UsuarioSeeder extends Seeder
                 'cedula' => '0-0000-0000',
                 'fecha_nacimiento' => '1990-01-01',
                 'telefono' => '99999999',
-                'password' => Hash::make('superadmin_password'), // ¡Cambia esta contraseña!
+                'password' => Hash::make('admin123'), // ¡Cambia esta contraseña!
                 'rol' => 'superadmin',
                 'estado' => 'activo', // El superadmin nace activo.
             ]

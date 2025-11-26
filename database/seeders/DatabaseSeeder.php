@@ -12,14 +12,20 @@ class DatabaseSeeder extends Seeder
 
     /**
      * Seed the application's database.
+     *
+     * @return void
      */
-    public function run(): void
+    public function run()
     {
-        // User::factory(10)->create();
+        // Le decimos a Laravel que ejecute SOLAMENTE los seeders que listamos aquí.
+        $this->call([
+            UsuarioSeeder::class,
+            // Si en el futuro creas un RideSeeder, lo añadirías aquí.
+        ]);
 
-        User::factory()->create([
+        /*User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
-        ]);
+        ]);*/
     }
 }
